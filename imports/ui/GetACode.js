@@ -4,6 +4,7 @@ import securePin from 'secure-pin';
 
 import { Links } from '../api/links';
 import CodeDisplay from './CodeDisplay';
+import Footer from './partials/Footer';
 
 export default class GetACode extends React.Component {
     constructor(props) {
@@ -45,7 +46,7 @@ export default class GetACode extends React.Component {
 
                 <p><Link to="/">Have a code?</Link></p>
 
-                <h6>0.1.0 - Development Release</h6>
+                <Footer />
             </div>
         );
     }

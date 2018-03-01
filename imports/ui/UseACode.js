@@ -1,15 +1,15 @@
 import React from 'react';
 import { findDOMNode } from 'react-dom';
 import { Link, Redirect } from 'react-router-dom';
+
 import { Links } from '../api/links';
+import Footer from './partials/Footer';
 
 export default class UseACode extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            code: '',
-            url: '',
-            redirect: false
+            error: ''
         };
     }
     onSubmit(e) {
@@ -19,29 +19,38 @@ export default class UseACode extends React.Component {
 
         const link = Links.findOne({ code });;
 
-        this.setState({
-            code,
-            url: link.url,
-            redirect: true
-        });
-    }
-    render() {
-
-        const { redirect, url, code } = this.state;
-
-        if (redirect) {
-            return <Redirect to={code} />;
+        if (link) {
+            window.location.href = link.url;
+        } else {
+            this.setState({
+                error: 'Sorry, wrong code.'
+            });
         }
 
+        this.refs.code.value = '';
+    }
+    render() {
         return (
             <div>
                 <h1>Amaro Link</h1>
 
-                <p><b>Usage:</b> add /yourcode to the url in the address bar</p>
+                {this.state.error ? <p>{this.state.error}</p> : undefined}
+
+                <form onSubmit={this.onSubmit.bind(this)}>
+                     <input
+                        type="text"
+                        ref="code"
+                        id="code-input"
+                        maxLength="4"
+                        placeholder="CODE"/>
+                     <button>Go!</button>
+                 </form>
+
+                <p><b>Tip:</b> you can add /yourcode to the url in the address bar to directly access your link</p>
 
                 <p><Link to="/code">Need a code?</Link></p>
 
-                <h6>0.1.0 - Development Release</h6>
+                <Footer />
             </div>
         );
     }

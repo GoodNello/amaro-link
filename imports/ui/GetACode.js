@@ -45,7 +45,7 @@ export default class GetACode extends React.Component {
 
                 <p><Link to="/">Have a code?</Link></p>
 
-                <h6>0.1.0-alpha2 - Development Release</h6>
+                <h6>0.1.0 - Development Release</h6>
             </div>
         );
     }

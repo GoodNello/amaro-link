@@ -37,14 +37,11 @@ export default class UseACode extends React.Component {
             <div>
                 <h1>Amaro Link</h1>
 
-                <form onSubmit={this.onSubmit.bind(this)}>
-                    <input type="text" ref="code" id="code-input" placeholder="CODE"/>
-                    <button>Go!</button>
-                </form>
+                <p><b>Usage:</b> add /yourcode to the url in the address bar</p>
 
                 <p><Link to="/code">Need a code?</Link></p>
 
-                <h6>0.1.0-alpha2 - Development Release</h6>
+                <h6>0.1.0 - Development Release</h6>
             </div>
         );
     }

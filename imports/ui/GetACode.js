@@ -20,10 +20,7 @@ export default class GetACode extends React.Component {
         if (url) {
             const code = securePin.generatePinSync(4);
 
-            Links.insert({
-                code,
-                url
-            });
+            Meteor.call('links.insert', code, url);
 
             this.setState({
                 code
@@ -35,7 +32,7 @@ export default class GetACode extends React.Component {
     render() {
         return (
             <div>
-                <p>GetACode Component here</p>
+                <h1>Amaro Link</h1>
 
                 {this.state.code ? <CodeDisplay code={this.state.code} /> : undefined}
 
@@ -48,7 +45,7 @@ export default class GetACode extends React.Component {
 
                 <p><Link to="/">Have a code?</Link></p>
 
-                <h6>0.1.0 - Development Release</h6>
+                <h6>0.1.0-alpha2 - Development Release</h6>
             </div>
         );
     }

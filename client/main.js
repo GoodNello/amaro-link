@@ -3,7 +3,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import { routes } from '../imports/routes/routes';
-import { Links } from '../imports/api/links';
+import '../imports/startup/simple-schema-configuration.js';
+
 
 Meteor.startup(() => {
     ReactDOM.render(routes, document.getElementById('app'));

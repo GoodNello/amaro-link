@@ -4,7 +4,7 @@ export default class Footer extends React.Component {
     render() {
         return (
             <div>
-                <h5>0.2.0-alpha2 (Development Release) - Amaro Team ❤️☕</h5>
+                <h1>Amaro Link</h1>
             </div>
         );
     }

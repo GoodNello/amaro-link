@@ -1,20 +1,18 @@
 import { Meteor } from 'meteor/meteor';
 import React from 'react';
-//import history from './history'; VALUTARE ELIMINAZIONE
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
 import UseACode from '../ui/UseACode';
 import GetACode from '../ui/GetACode';
+import Changelog from '../ui/Changelog';
 import NotFound from '../ui/NotFound';
-
-const unathenticatedPages = ['/', '/signup'];
-const authenticatedPages = ['/links'];
 
 export const routes = (
     <Router>
         <Switch>
-            <Route exact path="/" component={UseACode}/>
-            <Route path="/code" component={GetACode}/>
+            <Route exact path="/" component={UseACode} />
+            <Route path="/getcode" component={GetACode} />
+            <Route path="/changelog" component={Changelog} />
             <Route component={NotFound}/>
         </Switch>
     </Router>

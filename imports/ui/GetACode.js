@@ -3,20 +3,18 @@ import { Link } from 'react-router-dom';
 
 import Footer from './partials/Footer';
 import Header from './partials/Header';
-import Form from './partials/Form';
+import GetCodeForm from './partials/Forms/GetCodeForm';
 
-export default class GetACode extends React.Component {
-    render() {
-        return (
-            <div>
-                <Header />
+export default () => {
+    return (
+        <div>
+            <Header />
 
-                <Form getCode={true} />
+            <GetCodeForm />
 
-                <p><Link to="/">Have a code?</Link></p>
+            <p><Link to="/">Have a code?</Link></p>
 
-                <Footer />
-            </div>
-        );
-    }
+            <Footer />
+        </div>
+    );
 }

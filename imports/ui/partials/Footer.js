@@ -1,11 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-export default class Footer extends React.Component {
-    render() {
-        return (
-            <div>
-                <h5>0.2.0-alpha2 (Development Release) - Amaro Team ❤️☕</h5>
-            </div>
-        );
-    }
+export default () => {
+    return (
+        <div>
+            <h5><Link to="/changelog">0.2.0-alpha3</Link> (Development Release) - Amaro Team ❤️☕</h5>
+        </div>
+    );
 }

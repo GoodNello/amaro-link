@@ -3,22 +3,20 @@ import { Link } from 'react-router-dom';
 
 import Footer from './partials/Footer';
 import Header from './partials/Header';
-import Form from './partials/Form';
+import UseCodeForm from './partials/Forms/UseCodeForm';
 
-export default class UseACode extends React.Component {
-    render() {
-        return (
-            <div>
-                <Header />
+export default () => {
+    return (
+        <div>
+            <Header />
 
-                <Form useCode={true} />
+            <UseCodeForm />
 
-                <p><b>Tip:</b> you can add /yourcode to the url in the address bar to directly access your link</p>
+            <p><b>Tip:</b> you can add /yourcode to the url in the address bar to directly access your link</p>
 
-                <p><Link to="/code">Need a code?</Link></p>
+            <p><Link to="/getcode">Need a code?</Link></p>
 
-                <Footer />
-            </div>
-        );
-    }
+            <Footer />
+        </div>
+    );
 }

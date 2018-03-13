@@ -10,7 +10,7 @@ export default class Form extends React.Component {
         this.state = {
             code: 0,
             error: ''
-        }
+        };
     }
     onSubmit(e) {
 
@@ -29,11 +29,6 @@ export default class Form extends React.Component {
         }
 
         this.refs.code.value = '';
-    }
-    onChange(e) {
-        this.setState({
-            url: e.target.value.trim()
-        });
     }
     render() {
         return (

@@ -51,14 +51,14 @@ export default class Form extends React.Component {
                 {this.state.error ? <ErrorDisplay error={this.state.error} /> : undefined}
                 {this.state.code ? <CodeDisplay code={this.state.code} /> : undefined}
 
-                <form onSubmit={this.onSubmit.bind(this)}>
+                <form onSubmit={this.onSubmit.bind(this)} className="boxed-view__form">
                     <input
                         type="text"
                         placeholder="URL"
                         value={this.state.url}
                         onChange={this.onChange.bind(this)}
                         />
-                    <button type="submit">Go!</button>
+                    <button className="button" type="submit">Go!</button>
                 </form>
 
                 <p><b>Note:</b> as of now you need to prepend http, https or ftp to your url</p>

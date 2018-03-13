@@ -7,14 +7,16 @@ import GetCodeForm from './partials/Forms/GetCodeForm';
 
 export default () => {
     return (
-        <div>
-            <Header />
+        <div className="boxed-view">
+            <div className="boxed-view__box">
+                <Header />
 
-            <GetCodeForm />
+                <GetCodeForm />
 
-            <p><Link to="/">Have a code?</Link></p>
+                <p><Link to="/" className="button button--link">Have a code?</Link></p>
 
-            <Footer />
+                <Footer />
+            </div>
         </div>
     );
 }

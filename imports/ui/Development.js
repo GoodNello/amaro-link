@@ -12,6 +12,7 @@ export default () => {
                     <div className="boxed-view_box_list">
                         <span>
                             <p>Amaro Link is still under development and the database might be resetted without notice.</p>
+                            <p>Slowness and crashing may occur when using development releases.</p>
                         </span>
                         <span>
                             <h3>General</h3>

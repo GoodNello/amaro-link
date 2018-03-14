@@ -16,5 +16,8 @@
     "react-router-dom": "^4.2.2",
     "secure-pin": "^1.0.14",
     "simpl-schema": "^1.4.2"
+},
+  "engines": {
+      "node": "8.9.4"
   }
 }

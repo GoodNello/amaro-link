@@ -11,103 +11,66 @@ export default () => {
                 <Header />
                     <div className="boxed-view_box_list">
                         <span>
-                            <h3>0.2.2</h3>
+                            <h3>0.2</h3>
                             <ul>
                                 <li>
-                                    Fixed security issues
+                                    <b>.3</b> Fixed pin input not working correctly
+                                </li>
+                                <li>
+                                    <b>.2</b> Fixed security issues
+                                </li>
+                                <li>
+                                    <b>.1</b> Preparation for Heroku deployment
+                                </li>
+                                <li>
+                                    <b>.0</b> Fixed styling issues
+                                </li>
+                                <li>
+                                    <b>.0</b> Added pages for development and how to use
+                                </li>
+                                <li>
+                                    <b>.0-alpha4</b> Styled components
+                                </li>
+                                <li>
+                                    <b>.0-alpha4</b> Added pin input boxes thanks to <a href="https://github.com/arunghosh/react-pin-input">react-pin-input</a>
+                                </li>
+                                <li>
+                                    <b>.0-alpha3</b> Refactored code
+                                </li>
+                                <li>
+                                    <b>.0-alpha3</b> Added controlled inputs
+                                </li>
+                                <li>
+                                    <b>.0-alpha3</b> Added changelog page
+                                </li>
+                                <li>
+                                    <b>.0-alpha3</b> Moved /code to /getcode
+                                </li>
+                                <li>
+                                    <b>.0-alpha2</b>Refactored code
+                                </li>
+                                <li>
+                                    <b>.0-alpha1</b>Refactored code
+                                </li>
+                                <li>
+                                    <b>.0-alpha1</b>Support for accessing links via form
                                 </li>
                             </ul>
                         </span>
                         <span>
-                            <h3>0.2.1</h3>
+                            <h3>0.1</h3>
                             <ul>
                                 <li>
-                                    Preparation for Heroku deployment
-                                </li>
-                            </ul>
-                        </span>
-                        <span>
-                            <h3>0.2.0</h3>
-                            <ul>
-                                <li>
-                                    Fixed styling issues
+                                    <b>.0</b> Removed non-working form for accessing links via form (exp. in next release)
                                 </li>
                                 <li>
-                                    Added pages for development and how to use
-                                </li>
-                            </ul>
-                        </span>
-                        <span>
-                            <h3>0.2.0-alpha4</h3>
-                            <ul>
-                                <li>
-                                    Styled components
+                                    <b>.0-alpha2</b> Input validation via <a href="https://github.com/aldeed/meteor-simple-schema">simpl-schema</a>
                                 </li>
                                 <li>
-                                    Added pin input boxes thanks to <a href="https://github.com/arunghosh/react-pin-input">react-pin-input</a>
-                                </li>
-                            </ul>
-                        </span>
-                        <span>
-                            <h3>0.2.0-alpha3</h3>
-                            <ul>
-                                <li>
-                                    Refactored code
+                                    <b>.0-alpha2</b> Redirection via code in url
                                 </li>
                                 <li>
-                                    Added controlled inputs
-                                </li>
-                                <li>
-                                    Added changelog page
-                                </li>
-                                <li>
-                                    Moved /code to /getcode
-                                </li>
-                            </ul>
-                        </span>
-                        <span>
-                            <h3>0.2.0-alpha2</h3>
-                            <ul>
-                                <li>
-                                    Refactored code
-                                </li>
-                            </ul>
-                        </span>
-                        <span>
-                            <h3>0.2.0-alpha1</h3>
-                            <ul>
-                                <li>
-                                    Refactored code
-                                </li>
-                                <li>
-                                    Support for accessing links via form
-                                </li>
-                            </ul>
-                        </span>
-                        <span>
-                            <h3>0.1.0</h3>
-                            <ul>
-                                <li>
-                                    Removed non-working form for accessing links via form (exp. in next release)
-                                </li>
-                            </ul>
-                        </span>
-                        <span>
-                            <h3>0.1.0-alpha2</h3>
-                            <ul>
-                                <li>
-                                    Input validation via <a href="https://github.com/aldeed/meteor-simple-schema">simpl-schema</a>
-                                </li>
-                                <li>
-                                    Redirection via code in url
-                                </li>
-                            </ul>
-                        </span>
-                        <span>
-                            <h3>0.1.0-alpha1</h3>
-                            <ul>
-                                <li>
-                                    First developer release
+                                    <b>0-alpha1</b> First developer release
                                 </li>
                             </ul>
                         </span>

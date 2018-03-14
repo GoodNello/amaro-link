@@ -1,3 +1,4 @@
+import { Meter } from 'meteor/meteor';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PinInput from 'react-pin-input';
@@ -15,6 +16,9 @@ export default class UseACode extends React.Component {
         this.state = {
             error: ''
         };
+    }
+    componentWillMount() {
+        Meteor.subscribe('links');
     }
     render() {
         return (

@@ -6,7 +6,7 @@ export default () => {
         <div>
             <p><b><Link to="/howtouse">How To Use</Link></b></p>
             <p><b><Link to="/development">Development and Known Issues</Link></b></p>
-            <p><b><Link to="/changelog">0.2.2</Link> (Development Release)</b></p>
+            <p><b><Link to="/changelog">0.2.3</Link> (Development Release)</b></p>
             <p><b>Amaro Team ❤️☕</b></p>
         </div>
     );

@@ -4,6 +4,12 @@ import SimpleSchema from 'simpl-schema';
 
 export const Links = new Mongo.Collection('links');
 
+if (Meteor.isServer) {
+    Meteor.publish('links', function () {
+        return Links.find();
+    });
+}
+
 Meteor.methods({
     'links.insert'(code, url) {
 

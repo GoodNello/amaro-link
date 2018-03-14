@@ -6,6 +6,8 @@ import UseACode from '../ui/UseACode';
 import GetACode from '../ui/GetACode';
 import Changelog from '../ui/Changelog';
 import NotFound from '../ui/NotFound';
+import Development from '../ui/Development';
+import HowToUse from '../ui/HowToUse';
 
 export const routes = (
     <Router>
@@ -13,6 +15,8 @@ export const routes = (
             <Route exact path="/" component={UseACode} />
             <Route path="/getcode" component={GetACode} />
             <Route path="/changelog" component={Changelog} />
+            <Route path="/development" component={Development} />
+            <Route path="/howtouse" component={HowToUse} />
             <Route component={NotFound}/>
         </Switch>
     </Router>

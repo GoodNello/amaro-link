@@ -22,28 +22,34 @@ export default class UseACode extends React.Component {
                 <div className="boxed-view__box">
                     <Header />
 
+                        <span>
+                            <p>Access long links on your devices without any struggle.</p>
+                        </span>
+
                         {this.state.error ? <ErrorDisplay error={this.state.error} /> : undefined}
 
-                        <PinInput
-                          length={4}
-                          type="numeric"
-                          ref="code"
-                          onComplete={(value, index) => {
+                        <div className="boxed-view__pininput">
+                            <PinInput
+                                length={4}
+                                type="numeric"
+                                ref="code"
+                                onComplete={(value, index) => {
 
-                              const link = Links.findOne({ code: value });
+                                    const link = Links.findOne({ code: value });
 
-                              if (link) {
-                                  window.location.href = link.url;
-                              } else {
-                                  this.setState({
-                                      error: 'Sorry, wrong code.'
-                                  });
-                                  this.refs.code.clear();
-                              }
-                          }}
-                         />
+                                    if (link) {
+                                        window.location.href = link.url;
+                                    } else {
+                                        this.setState({
+                                            error: 'Sorry, either the code is wrong or expired.'
+                                        });
+                                        this.refs.code.clear();
+                                    }
+                                }}
+                             />
+                        </div>
 
-                        <p><b>Tip:</b> you can add /yourcode to the url in the address bar to directly access your link</p>
+                        <p><b>Tip:</b> you can also add /yourcode to the url in the address bar to directly access your link</p>
 
                         <p><Link to="/getcode" className="button button--link">Need a code?</Link></p>
 

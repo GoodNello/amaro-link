@@ -18,6 +18,7 @@ export default () => {
                             <h3>General</h3>
                             <ul>
                                 <li>There is no way to remove a saved link.</li>
+                                <li>The changelog page is too long and needs to be moved somewhere else.</li>
                             </ul>
                         </span>
                         <span>

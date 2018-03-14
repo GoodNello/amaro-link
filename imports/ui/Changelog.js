@@ -11,6 +11,14 @@ export default () => {
                 <Header />
                     <div className="boxed-view_box_list">
                         <span>
+                            <h3>0.2.2</h3>
+                            <ul>
+                                <li>
+                                    Fixed security issues
+                                </li>
+                            </ul>
+                        </span>
+                        <span>
                             <h3>0.2.1</h3>
                             <ul>
                                 <li>

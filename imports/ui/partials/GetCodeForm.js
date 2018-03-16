@@ -1,7 +1,6 @@
 import React from "react";
 
 import { Links } from "../../api/links";
-import securePin from "secure-pin";
 
 import ErrorDisplay from "./ErrorDisplay";
 import CodeDisplay from "./CodeDisplay";
@@ -21,9 +20,7 @@ export default class GetCodeForm extends React.Component {
     const { url } = this.state;
 
     if (url) {
-      const code = securePin.generatePinSync(4);
-
-      Meteor.call("links.insert", code, url, (err, res) => {
+      Meteor.call("links.insert", url, (err, res) => {
         if (err) {
           this.setState({
             error: err.message,
@@ -33,7 +30,7 @@ export default class GetCodeForm extends React.Component {
           this.setState({
             error: "Code created.",
             url: "",
-            code
+            code: res
           });
         }
       });

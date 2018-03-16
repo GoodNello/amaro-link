@@ -16,7 +16,12 @@ export default () => {
       </p>
       <p>
         <b>
-          <Link to="/changelog">0.3.0-alpha1</Link> (Development Release)
+          <Link to="/about-api">Experimental API</Link>
+        </b>
+      </p>
+      <p>
+        <b>
+          <Link to="/changelog">0.3.0-alpha2</Link> (Development Release)
         </b>
       </p>
       <p>

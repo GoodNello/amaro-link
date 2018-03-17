@@ -14,6 +14,9 @@ export default () => {
             <h3>0.3</h3>
             <ul>
               <li>
+                <b>.0-alpha4</b> Merged fixes from v0.2.4
+              </li>
+              <li>
                 <b>.0-alpha3</b> Initial API support (POST)
               </li>
               <li>

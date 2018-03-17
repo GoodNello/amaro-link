@@ -14,7 +14,10 @@ export default () => {
             <h3>0.3</h3>
             <ul>
               <li>
-                <b>.0-alpha2</b> Initial API support (GET only)
+                <b>.0-alpha3</b> Initial API support (POST)
+              </li>
+              <li>
+                <b>.0-alpha2</b> Initial API support (GET)
               </li>
               <li>
                 <b>.0-alpha1</b> Refactored code

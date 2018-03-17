@@ -15,8 +15,12 @@ export default () => {
             application.
           </p>
           <p>
-            If this application is still in a developing stage, this section is
-            even more than that.
+            By using <code>http://www.amaro.link/api/v1/link</code> you can send
+            GET and POST requests to save a link or retrieve one via code.
+          </p>
+          <p>
+            To request an API key and to know how to do that, please{" "}
+            <a href="mailto:giulio@amaro.team">contact me</a>.
           </p>
         </div>
         <Footer />

@@ -16,9 +16,9 @@ export default class UseACode extends React.Component {
       error: ""
     };
   }
-  componentWillMount() {
+  /*   componentWillMount() {
     Meteor.subscribe("links");
-  }
+  } */
   render() {
     return (
       <div className="boxed-view">
@@ -40,6 +40,11 @@ export default class UseACode extends React.Component {
               length={4}
               type="numeric"
               ref="code"
+              onChange={(value, index) => {
+                if (index === 3) {
+                  Meteor.subscribe("links");
+                }
+              }}
               onComplete={(value, index) => {
                 const link = Links.findOne({ code: value });
 

@@ -12,7 +12,7 @@ export const API = {
     const getRequestContents = API.utility.getRequestContents(request);
     return { data: getRequestContents };
   },
-  handleRequest: function(context, resource, request) {
+  handleRequest: function(context, request) {
     const connection = API.connection(request);
     if (!connection.error) {
       API.methods.link[request.method](context, request);
@@ -45,22 +45,26 @@ export const API = {
         }
       },
       POST: function(context, request) {
-        const hasData = API.utility.hasData(request.query);
+        const hasData = API.utility.hasData(request.body);
 
         if (hasData) {
-          const link = Meteor.call("links.insert", url, (err, res) => {
-            if (err) {
-              API.utility.response(context, 403, {
-                error: 403,
-                message: "Invalid POST call: the link is not a valid URL."
-              });
-            } else {
-              API.utility.response(context, 200, {
-                code: res,
-                message: "Code successfully created."
-              });
+          const link = Meteor.call(
+            "links.insert",
+            request.body.url,
+            (err, res) => {
+              if (err) {
+                API.utility.response(context, 403, {
+                  error: 403,
+                  message: "Invalid POST call: the link is not a valid URL."
+                });
+              } else {
+                API.utility.response(context, 200, {
+                  code: res,
+                  message: "Code successfully created."
+                });
+              }
             }
-          });
+          );
         }
       }
     }
@@ -75,8 +79,8 @@ export const API = {
           return request.body;
       }
     },
-    hasData: function(query) {
-      return Object.keys(query).length > 0 ? true : false;
+    hasData: function(content) {
+      return Object.keys(content).length > 0 ? true : false;
     },
     response: function(context, statusCode, data) {
       context.setHeader("Content-Type", "application/json");

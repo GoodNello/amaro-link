@@ -11,23 +11,18 @@ export default () => {
       </p>
       <p>
         <b>
-          <Link to="/development">Development and Known Issues</Link>
+          <Link to="/about-api">Extend via API</Link>
         </b>
       </p>
       <p>
         <b>
-          <Link to="/about-api">Experimental API</Link>
-        </b>
-      </p>
-      <p>
-        <b>
-          <Link to="/changelog">0.3.0-alpha4</Link> (Development Release)
+          <Link to="/changelog">0.3.0-beta1</Link> (Development Release)
         </b>
       </p>
       <p>
         <b>
           <a href="http://www.amaro.team/" className="footer__nodec">
-            Amaro Team ❤️☕
+            Amaro Team
           </a>
         </b>
       </p>

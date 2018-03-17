@@ -2,15 +2,30 @@ import { Meteor } from "meteor/meteor";
 import { Mongo } from "meteor/mongo";
 import SimpleSchema from "simpl-schema";
 import securePin from "secure-pin";
+import { APIKeys } from "./apikeys";
 
 export const Links = new Mongo.Collection("links");
 export const API = {
   authentication: function(apiKey) {
-    // FUTURE SUPPORT FOR API KEYS
+    const keyExists = APIKeys.findOne({ key: apiKey });
+    if (keyExists) {
+      return true;
+    } else {
+      return false;
+    }
   },
   connection: function(request) {
     const getRequestContents = API.utility.getRequestContents(request);
-    return { data: getRequestContents };
+    const apiKey = getRequestContents.api_key;
+    const isValid = API.authentication(apiKey);
+
+    if (isValid) {
+      Meteor.call("apiKeys.trackRequest");
+      delete getRequestContents.api_key;
+      return { data: getRequestContents };
+    } else {
+      return { error: 401, message: "Invalid API key." };
+    }
   },
   handleRequest: function(context, request) {
     const connection = API.connection(request);

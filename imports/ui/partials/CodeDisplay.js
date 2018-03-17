@@ -5,6 +5,9 @@ export default props => {
   return (
     <div>
       <p>Your Code: {props.code}</p>
+      <p>
+        Access your link faster using <code>amaro.link/{props.code}</code>
+      </p>
     </div>
   );
 };

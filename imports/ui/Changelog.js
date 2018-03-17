@@ -11,21 +11,20 @@ export default () => {
         <Header />
         <div className="boxed-view_box_list">
           <span>
-            <h3>0.3</h3>
+            <h3>0.3.0</h3>
             <ul>
               <li>
-                <b>.0-alpha4</b> Merged fixes from v0.2.4
+                New <Link to="/about-api">API support</Link> for GET and POST
+                requests
               </li>
-              <li>
-                <b>.0-alpha3</b> Initial API support (POST)
-              </li>
-              <li>
-                <b>.0-alpha2</b> Initial API support (GET)
-              </li>
-              <li>
-                <b>.0-alpha1</b> Refactored code
-              </li>
+              <li>The user IP is stored to avoid abuse of the service</li>
+              <li>ReCAPTCHA support for suspected abuse of service</li>
             </ul>
+            <p>
+              <b>
+                <Link to="/development">Development and Known Issues</Link>
+              </b>
+            </p>
           </span>
         </div>
         <Footer />

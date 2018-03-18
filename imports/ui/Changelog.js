@@ -17,8 +17,6 @@ export default () => {
                 New <Link to="/about-api">API support</Link> for GET and POST
                 requests
               </li>
-              <li>The user IP is stored to avoid abuse of the service</li>
-              <li>ReCAPTCHA support for suspected abuse of service</li>
             </ul>
             <p>
               <b>

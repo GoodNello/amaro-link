@@ -4,6 +4,7 @@
 
 ### 0.3.0
 
+* Changed API url to api/link
 * **beta1** Added support for API keys
 * **alpha4** Merged fixes from v0.2.4
 * **alpha3** Minitial API support (POST)
@@ -31,7 +32,7 @@
 
 #### 0.2.0
 
-* Adedd pages for development and how to use
+* Added pages for development and how to use
 * **alpha4** Styled components
 * **alpha4** Added pin input boxesthanks to [react-pin-input](https://github.com/arunghosh/react-pin-input)
 * **alpha3** Refactored code

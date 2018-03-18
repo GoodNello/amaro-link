@@ -15,8 +15,13 @@ export default () => {
             application.
           </p>
           <p>
-            By using <code>http://www.amaro.link/api/v1/link</code> you can send
+            By using <code>http://www.amaro.link/api/link</code> you can send
             GET and POST requests to save a link or retrieve one via code.
+          </p>
+          <p>
+            <a href="https://pastebin.com/exgtSSuP">
+              See some examples using Meteor's HTTP package.
+            </a>
           </p>
           <p>
             To request an API key and to know how to do that, please{" "}

@@ -4,9 +4,11 @@ import SimpleSchema from "simpl-schema";
 import securePin from "secure-pin";
 import { APIKeys } from "./apikeys";
 
+const API_VERSION = "v1";
+
 export const Links = new Mongo.Collection("links");
 export const API = {
-  authentication: function(apiKey) {
+  authentication: function(apiKey = 0) {
     const keyExists = APIKeys.findOne({ key: apiKey });
     if (keyExists) {
       return true;
@@ -38,12 +40,11 @@ export const API = {
   methods: {
     link: {
       GET: function(context, request) {
-        const hasQuery = API.utility.hasData(request.query);
-
-        if (hasQuery) {
+        if (request.query.code) {
           const link = Links.findOne({ code: request.query.code });
 
           if (link) {
+            link["api_version"] = API_VERSION;
             API.utility.response(context, 200, link);
           } else {
             API.utility.response(context, 404, {
@@ -75,6 +76,7 @@ export const API = {
               } else {
                 API.utility.response(context, 200, {
                   code: res,
+                  api_version: API_VERSION,
                   message: "Code successfully created."
                 });
               }
@@ -93,9 +95,6 @@ export const API = {
         case "POST":
           return request.body;
       }
-    },
-    hasData: function(content) {
-      return Object.keys(content).length > 0 ? true : false;
     },
     response: function(context, statusCode, data) {
       context.setHeader("Content-Type", "application/json");

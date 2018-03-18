@@ -16,9 +16,6 @@ export default class UseACode extends React.Component {
       error: ""
     };
   }
-  /*   componentWillMount() {
-    Meteor.subscribe("links");
-  } */
   render() {
     return (
       <div className="boxed-view">

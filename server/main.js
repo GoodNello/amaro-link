@@ -20,7 +20,7 @@ Meteor.startup(() => {
       res.statusCode = 302;
       res.setHeader("Location", link.url);
       res.end();
-    } else if (code.toString() === "api/v1/link") {
+    } else if (code.toString() === "api/link") {
       res.setHeader("Access-Control-Allow-Origin", "*");
       if (req.method === "OPTIONS") {
         res.setHeader(
@@ -30,7 +30,6 @@ Meteor.startup(() => {
         res.setHeader("Access-Control-Allow-Methods", "POST, GET, OPTIONS");
         res.end("Set OPTIONS.");
       } else {
-        console.log("Body:", req.body);
         API.handleRequest(res, req);
       }
     } else {

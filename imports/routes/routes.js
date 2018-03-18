@@ -1,23 +1,25 @@
-import { Meteor } from 'meteor/meteor';
-import React from 'react';
-import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import { Meteor } from "meteor/meteor";
+import React from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-import UseACode from '../ui/UseACode';
-import GetACode from '../ui/GetACode';
-import Changelog from '../ui/Changelog';
-import NotFound from '../ui/NotFound';
-import Development from '../ui/Development';
-import HowToUse from '../ui/HowToUse';
+import UseACode from "../ui/UseACode";
+import GetACode from "../ui/GetACode";
+import Changelog from "../ui/Changelog";
+import NotFound from "../ui/NotFound";
+import Development from "../ui/Development";
+import HowToUse from "../ui/HowToUse";
+import AboutApi from "../ui/AboutApi";
 
 export const routes = (
-    <Router>
-        <Switch>
-            <Route exact path="/" component={UseACode} />
-            <Route path="/getcode" component={GetACode} />
-            <Route path="/changelog" component={Changelog} />
-            <Route path="/development" component={Development} />
-            <Route path="/howtouse" component={HowToUse} />
-            <Route component={NotFound}/>
-        </Switch>
-    </Router>
+  <Router>
+    <Switch>
+      <Route exact path="/" component={UseACode} />
+      <Route path="/getcode" component={GetACode} />
+      <Route path="/changelog" component={Changelog} />
+      <Route path="/development" component={Development} />
+      <Route path="/howtouse" component={HowToUse} />
+      <Route path="/about-api" component={AboutApi} />
+      <Route component={NotFound} />
+    </Switch>
+  </Router>
 );

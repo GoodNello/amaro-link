@@ -2,7 +2,13 @@
 
 ## Changelog
 
-### 0.3.0
+### 0.3
+
+### 0.3.1
+
+* Added Google Analytics
+
+#### 0.3.0
 
 * Changed API url to api/link
 * **beta1** Added support for API keys

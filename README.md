@@ -4,6 +4,11 @@
 
 ### 0.3
 
+### 0.3.2
+
+* Fixed Meteor's subscription
+* Modified API url handling
+
 ### 0.3.1
 
 * Added Google Analytics

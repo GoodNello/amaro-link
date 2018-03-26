@@ -16,7 +16,7 @@ export default () => {
       </p>
       <p>
         <b>
-          <Link to="/changelog">0.3.0</Link> (Development Release)
+          <Link to="/changelog">0.3.2</Link> (Development Release)
         </b>
       </p>
       <p>

@@ -1,4 +1,5 @@
-import { Meter } from "meteor/meteor";
+import { Meteor } from "meteor/meteor";
+import { Tracker } from "meteor/tracker";
 import React from "react";
 import { Link } from "react-router-dom";
 import PinInput from "react-pin-input";
@@ -13,8 +14,14 @@ export default class UseACode extends React.Component {
   constructor() {
     super();
     this.state = {
+      code: undefined,
       error: ""
     };
+  }
+  componentWillMount() {
+    Tracker.autorun(() => {
+      Meteor.subscribe("links.getByCode", this.state.code);
+    });
   }
   render() {
     return (
@@ -37,14 +44,10 @@ export default class UseACode extends React.Component {
               length={4}
               type="numeric"
               ref="code"
-              onChange={(value, index) => {
-                if (index === 3) {
-                  Meteor.subscribe("links");
-                }
-              }}
               onComplete={(value, index) => {
-                const link = Links.findOne({ code: value });
+                this.setState({ code: value });
 
+                const link = Links.findOne({ value });
                 if (link) {
                   window.location.href = link.url;
                 } else {

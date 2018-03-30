@@ -12,7 +12,7 @@ export default () => {
         <div className="boxed-view_box_list">
           <span>
             <p>
-              Amaro Link is still under development and its database might be
+              Amaro Link is still under development and its database may be
               resetted without notice.
             </p>
             <p>
@@ -22,7 +22,7 @@ export default () => {
           <span>
             <h3>General</h3>
             <ul>
-              <li>There is no way to remove a saved link.</li>
+              <li>Support for users is expected in the final release.</li>
             </ul>
           </span>
           <span>
@@ -35,7 +35,7 @@ export default () => {
             </ul>
           </span>
         </div>
-        <Footer />
+        <Footer showLess={true} />
       </div>
     </div>
   );

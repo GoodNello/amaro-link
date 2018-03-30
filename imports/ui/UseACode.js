@@ -11,18 +11,6 @@ import Header from "./partials/Header";
 import ErrorDisplay from "./partials/ErrorDisplay";
 
 export default class UseACode extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      code: undefined,
-      error: ""
-    };
-  }
-  componentWillMount() {
-    Tracker.autorun(() => {
-      Meteor.subscribe("links.getByCode", this.state.code);
-    });
-  }
   render() {
     return (
       <div className="boxed-view">
@@ -33,29 +21,13 @@ export default class UseACode extends React.Component {
             <p>Access long links on your devices without any struggle.</p>
           </span>
 
-          {this.state.error ? (
-            <ErrorDisplay error={this.state.error} />
-          ) : (
-            undefined
-          )}
-
           <div className="boxed-view__pininput">
             <PinInput
               length={4}
               type="numeric"
               ref="code"
               onComplete={(value, index) => {
-                this.setState({ code: value });
-
-                const link = Links.findOne({ value });
-                if (link) {
-                  window.location.href = link.url;
-                } else {
-                  this.setState({
-                    error: "Sorry, either the code is wrong or expired."
-                  });
-                  this.refs.code.clear();
-                }
+                window.location.href = "/" + value;
               }}
             />
           </div>

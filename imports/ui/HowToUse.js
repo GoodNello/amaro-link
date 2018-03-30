@@ -22,7 +22,7 @@ export default () => {
             </p>
           </span>
         </div>
-        <Footer />
+        <Footer showLess={true} />
       </div>
     </div>
   );

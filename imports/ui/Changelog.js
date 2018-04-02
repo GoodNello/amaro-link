@@ -11,7 +11,7 @@ export default () => {
         <Header />
         <div className="boxed-view_box_list">
           <span>
-            <h3>0.3.0</h3>
+            <h3>0.3</h3>
             <ul>
               <li>
                 New <Link to="/about-api">API support</Link> for GET and POST
@@ -25,7 +25,7 @@ export default () => {
             </p>
           </span>
         </div>
-        <Footer />
+        <Footer showLess={true} />
       </div>
     </div>
   );

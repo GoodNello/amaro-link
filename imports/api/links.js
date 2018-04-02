@@ -130,3 +130,22 @@ Meteor.methods({
     return code;
   }
 });
+
+if (Meteor.isServer) {
+  Meteor.publish("links.getByCode", function(code) {
+    if (!code) {
+      return this.ready();
+    }
+
+    new SimpleSchema({
+      code: {
+        type: Number,
+        label: "Your code"
+      }
+    }).validate({ code });
+
+    const options = { fields: { url: 1 } };
+
+    return Links.findOne({ code }, options);
+  });
+}

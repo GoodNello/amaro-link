@@ -64,8 +64,7 @@ export default class GetCodeForm extends React.Component {
         </form>
 
         <p>
-          <b>Note:</b> as of now you need to prepend http, https or ftp to your
-          url
+          <b>Note:</b> as of now you need to prepend http or https to your url
         </p>
       </div>
     );

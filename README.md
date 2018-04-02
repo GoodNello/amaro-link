@@ -4,6 +4,14 @@
 
 ### 0.3
 
+### 0.3.2
+
+* Added :hover property for Header component
+* Footer component now shows less links in certain pages
+* Changed the way urls are retrieved using the form
+* Modified API url handling
+* Minor text corrections
+
 ### 0.3.1
 
 * Added Google Analytics
@@ -13,7 +21,7 @@
 * Changed API url to api/link
 * **beta1** Added support for API keys
 * **alpha4** Merged fixes from v0.2.4
-* **alpha3** Minitial API support (POST)
+* **alpha3** Initial API support (POST)
 * **alpha2** Initial API support (GET)
 * **alpha1** Refactored code
 

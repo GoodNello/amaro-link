@@ -11,8 +11,8 @@ export default () => {
         <Header />
         <div className="boxed-view_box_list">
           <p>
-            Amaro Link exposes some API to create links through your
-            application.
+            Amaro Link exposes some API to create and retrieve links through
+            your own application.
           </p>
           <p>
             By using <code>http://www.amaro.link/api/link</code> you can send
@@ -24,11 +24,11 @@ export default () => {
             </a>
           </p>
           <p>
-            To request an API key and to know how to do that, please{" "}
+            To request an API key, please{" "}
             <a href="mailto:giulio@amaro.team">contact me</a>.
           </p>
         </div>
-        <Footer />
+        <Footer showLess={true} />
       </div>
     </div>
   );

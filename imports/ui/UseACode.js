@@ -1,4 +1,5 @@
-import { Meter } from "meteor/meteor";
+import { Meteor } from "meteor/meteor";
+import { Tracker } from "meteor/tracker";
 import React from "react";
 import { Link } from "react-router-dom";
 import PinInput from "react-pin-input";
@@ -10,12 +11,6 @@ import Header from "./partials/Header";
 import ErrorDisplay from "./partials/ErrorDisplay";
 
 export default class UseACode extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      error: ""
-    };
-  }
   render() {
     return (
       <div className="boxed-view">
@@ -26,33 +21,13 @@ export default class UseACode extends React.Component {
             <p>Access long links on your devices without any struggle.</p>
           </span>
 
-          {this.state.error ? (
-            <ErrorDisplay error={this.state.error} />
-          ) : (
-            undefined
-          )}
-
           <div className="boxed-view__pininput">
             <PinInput
               length={4}
               type="numeric"
               ref="code"
-              onChange={(value, index) => {
-                if (index === 3) {
-                  Meteor.subscribe("links");
-                }
-              }}
               onComplete={(value, index) => {
-                const link = Links.findOne({ code: value });
-
-                if (link) {
-                  window.location.href = link.url;
-                } else {
-                  this.setState({
-                    error: "Sorry, either the code is wrong or expired."
-                  });
-                  this.refs.code.clear();
-                }
+                window.location.href = "/" + value;
               }}
             />
           </div>

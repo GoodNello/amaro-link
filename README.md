@@ -7,6 +7,9 @@
 ### 0.3.3
 
 * Added more information for NotFound component
+* Added focus property for pin input
+* Changed footer showLess prop behavior
+* Added link to /development in /howtouse
 
 ### 0.3.2
 

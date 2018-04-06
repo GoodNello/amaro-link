@@ -24,6 +24,7 @@ export default class UseACode extends React.Component {
           <div className="boxed-view__pininput">
             <PinInput
               length={4}
+              focus
               type="numeric"
               ref="code"
               onComplete={(value, index) => {

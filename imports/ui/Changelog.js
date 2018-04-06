@@ -18,6 +18,7 @@ export default () => {
                 requests
               </li>
             </ul>
+            <p>Patch releases are not listed here.</p>
             <p>
               <b>
                 <Link to="/development">Development and Known Issues</Link>

@@ -20,6 +20,11 @@ export default () => {
               Access amaro.link on your device and enter the code to access the
               saved page or simply go to <code>amaro.link/yourcode</code>.
             </p>
+            <p>
+              <Link to="/development">
+                Read about the development and known issues.
+              </Link>
+            </p>
           </span>
         </div>
         <Footer showLess={true} />

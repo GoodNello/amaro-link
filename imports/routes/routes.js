@@ -19,7 +19,7 @@ export const routes = (
       <Route path="/development" component={Development} />
       <Route path="/howtouse" component={HowToUse} />
       <Route path="/about-api" component={AboutApi} />
-      <Route component={NotFound} />
+      <Route path="/:code" component={NotFound} />
     </Switch>
   </Router>
 );

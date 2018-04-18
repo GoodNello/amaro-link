@@ -22,11 +22,7 @@ export default props => {
       )}
       <p>
         <b>
-          <Link to="/changelog">0.3.3</Link> (Development Release)
-        </b>
-      </p>
-      <p>
-        <b>
+          <Link to="/changelog">1.0</Link> -{" "}
           <a href="http://www.amaro.team/" className="footer__nodec">
             Amaro Team
           </a>

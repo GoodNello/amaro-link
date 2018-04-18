@@ -11,18 +11,23 @@ export default () => {
         <Header />
         <div className="boxed-view_box_list">
           <span>
-            <h3>0.3</h3>
-            <ul>
-              <li>
-                New <Link to="/about-api">API support</Link> for GET and POST
-                requests
-              </li>
-            </ul>
-            <p>Patch releases are not listed here.</p>
             <p>
-              <b>
-                <Link to="/development">Development and Known Issues</Link>
-              </b>
+              Amaro Link is a project made by GoodNello. Its code is available
+              on <a href="https://github.com/GoodNello/amaro-link">GitHub</a>.
+            </p>
+          </span>
+          <span>
+            <h3>1.0</h3>
+            <ul>
+              <li>Limited app to only have 9999 links saved</li>
+              <li>Codes now expire after 20 minutes</li>
+              <li>Removed /development component</li>
+            </ul>
+          </span>
+          <span>
+            <p>
+              Issues are listed{" "}
+              <a href="https://github.com/GoodNello/amaro-link/issues">here</a>.
             </p>
           </span>
         </div>

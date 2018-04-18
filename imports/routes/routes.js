@@ -6,7 +6,6 @@ import UseACode from "../ui/UseACode";
 import GetACode from "../ui/GetACode";
 import Changelog from "../ui/Changelog";
 import NotFound from "../ui/NotFound";
-import Development from "../ui/Development";
 import HowToUse from "../ui/HowToUse";
 import AboutApi from "../ui/AboutApi";
 
@@ -16,7 +15,6 @@ export const routes = (
       <Route exact path="/" component={UseACode} />
       <Route path="/getcode" component={GetACode} />
       <Route path="/changelog" component={Changelog} />
-      <Route path="/development" component={Development} />
       <Route path="/howtouse" component={HowToUse} />
       <Route path="/about-api" component={AboutApi} />
       <Route path="/:code" component={NotFound} />

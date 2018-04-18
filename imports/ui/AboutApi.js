@@ -18,6 +18,7 @@ export default () => {
             By using <code>http://www.amaro.link/api/link</code> you can send
             GET and POST requests to save a link or retrieve one via code.
           </p>
+          <p>POST requests comply to the application limits.</p>
           <p>
             <a href="https://pastebin.com/exgtSSuP">
               See some examples using Meteor's HTTP package.

@@ -9,7 +9,9 @@ const API_VERSION = "v1";
 export const Links = new Mongo.Collection("links");
 export const API = {
   authentication: function(apiKey = 0) {
-    const keyExists = APIKeys.findOne({ key: apiKey });
+    const keyExists = APIKeys.findOne({
+      key: apiKey
+    });
     if (keyExists) {
       return true;
     } else {
@@ -24,9 +26,14 @@ export const API = {
     if (isValid) {
       Meteor.call("apiKeys.trackRequest");
       delete getRequestContents.api_key;
-      return { data: getRequestContents };
+      return {
+        data: getRequestContents
+      };
     } else {
-      return { error: 401, message: "Invalid API key." };
+      return {
+        error: 401,
+        message: "Invalid API key."
+      };
     }
   },
   handleRequest: function(context, request) {
@@ -41,8 +48,9 @@ export const API = {
     link: {
       GET: function(context, request) {
         if (request.query.code) {
-          const link = Links.findOne({ code: request.query.code });
-
+          const link = Links.findOne({
+            code: request.query.code
+          });
           if (link) {
             link["api_version"] = API_VERSION;
             API.utility.response(context, 200, link);
@@ -64,10 +72,9 @@ export const API = {
         const hasData = API.utility.hasData(request.body);
 
         if (hasData) {
-          const link = Meteor.call(
-            "links.insert",
-            request.body.url,
-            (err, res) => {
+          const isFull = Meteor.call("links.isFull");
+          if (isFull) {
+            Meteor.call("links.insert", request.body.url, (err, res) => {
               if (err) {
                 API.utility.response(context, 403, {
                   error: 403,
@@ -80,8 +87,13 @@ export const API = {
                   message: "Code successfully created."
                 });
               }
-            }
-          );
+            });
+          }
+        } else {
+          API.utility.response(context, 403, {
+            error: 403,
+            message: "Invalid POST call: empty body."
+          });
         }
       }
     }
@@ -105,8 +117,32 @@ export const API = {
 };
 
 if (Meteor.isServer) {
-  Meteor.publish("links", function() {
-    return Links.find();
+  Meteor.publish("links.getByCode", function(code) {
+    if (!code) {
+      return this.ready();
+    }
+
+    new SimpleSchema({
+      code: {
+        type: Number,
+        label: "Your code"
+      }
+    }).validate({
+      code
+    });
+
+    const options = {
+      fields: {
+        url: 1
+      }
+    };
+
+    return Links.findOne(
+      {
+        code
+      },
+      options
+    );
   });
 }
 
@@ -118,34 +154,30 @@ Meteor.methods({
         label: "Your link",
         regEx: SimpleSchema.RegEx.Url
       }
-    }).validate({ url });
+    }).validate({
+      url
+    });
 
     const code = securePin.generatePinSync(4);
 
     Links.insert({
       code,
-      url
+      url,
+      expiresAt: new Date().getTime() + 60000 * 20
     });
 
     return code;
-  }
-});
+  },
+  "links.expire"() {
+    Links.remove({ expiresAt: { $lte: new Date().getTime() } });
+  },
+  "links.isFull"() {
+    const numLinks = Links.find({}).count();
 
-if (Meteor.isServer) {
-  Meteor.publish("links.getByCode", function(code) {
-    if (!code) {
-      return this.ready();
+    if (numLinks >= 9999) {
+      return true;
     }
 
-    new SimpleSchema({
-      code: {
-        type: Number,
-        label: "Your code"
-      }
-    }).validate({ code });
-
-    const options = { fields: { url: 1 } };
-
-    return Links.findOne({ code }, options);
-  });
-}
+    return false;
+  }
+});

@@ -11,7 +11,6 @@ Meteor.startup(() => {
     "/api/link",
     bodyParser.urlencoded({ extended: true })
   );
-
   WebApp.connectHandlers.use("/api/link", (req, res) => {
     res.setHeader("Access-Control-Allow-Origin", "*");
     if (req.method === "OPTIONS") {
@@ -28,6 +27,7 @@ Meteor.startup(() => {
 
   WebApp.connectHandlers.use((req, res, next) => {
     const code = req.url.slice(1, 12);
+    Links.remove({ expiresAt: { $lte: new Date().getTime() } });
     const link = Links.findOne({ code });
 
     if (link) {

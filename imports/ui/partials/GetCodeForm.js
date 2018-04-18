@@ -20,20 +20,27 @@ export default class GetCodeForm extends React.Component {
     const { url } = this.state;
 
     if (url) {
-      Meteor.call("links.insert", url, (err, res) => {
-        if (err) {
-          this.setState({
-            error: err.message,
-            url: ""
-          });
-        } else {
-          this.setState({
-            error: "Code created.",
-            url: "",
-            code: res
-          });
-        }
-      });
+      const isFull = Meteor.call("links.isFull");
+      if (isFull) {
+        this.setState({
+          error: "Limit reached, wait a few minutes before saving a link."
+        });
+      } else {
+        Meteor.call("links.insert", url, (err, res) => {
+          if (err) {
+            this.setState({
+              error: err.message,
+              url: ""
+            });
+          } else {
+            this.setState({
+              error: "Code created.",
+              url: "",
+              code: res
+            });
+          }
+        });
+      }
     }
   }
   onChange(e) {

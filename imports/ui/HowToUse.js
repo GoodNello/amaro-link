@@ -13,18 +13,16 @@ export default () => {
           <span>
             <h3>How To Use</h3>
             <p>
-              Paste your link in the <Link to="/getcode">GetCode page</Link> and
-              take note of the code.
+              Paste your URL in the <Link to="/getcode">GetCode page</Link> and
+              take note of the code, which will be valid for the next 20
+              minutes.
             </p>
             <p>
               Access amaro.link on your device and enter the code to access the
               saved page or simply go to <code>amaro.link/yourcode</code>.
             </p>
-            <p>
-              <Link to="/development">
-                Read about the development and known issues.
-              </Link>
-            </p>
+            <p>This application does not collect your data through cookies.</p>
+            <p>Expired URLs are permanently removed from the database.</p>
           </span>
         </div>
         <Footer showLess={true} />

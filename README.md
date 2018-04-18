@@ -3,6 +3,8 @@
 [Amaro Link](http://www.amaro.link/) is a web application made to easily share URLs between devices.
 It is developed using [React](https://github.com/facebook/react) and [Meteor](https://github.com/meteor/meteor).
 
+This project was inspired by an [Andrew Mead's course](https://mead.io/).
+
 ## Installation
 
 Make sure you have Meteor >= 1.6 installed.

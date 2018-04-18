@@ -1,11 +1,27 @@
 # Amaro Link
 
+[Amaro Link](http://www.amaro.link/) is a web application made to easily share URLs between devices.
+It is developed using [React](https://github.com/facebook/react) and [Meteor](https://github.com/meteor/meteor).
+
+## Installation
+
+Make sure you have Meteor >= 1.6 installed.
+
+1.  Clone or unzip the repo into a folder
+2.  Install dependencies via `meteor npm install`
+3.  Run via `meteor`
+
+## How to contribute
+
+Feel free to contribute to the project. There are some open issues that address some [known problems](https://github.com/GoodNello/amaro-link/issues).
+
 ## Changelog
 
 ### 1.0
 
 * Limited app to only have 9999 links saved
 * Codes now expire after 20 minutes
+* Removed /development component
 
 ### 0.3
 

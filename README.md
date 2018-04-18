@@ -2,16 +2,21 @@
 
 ## Changelog
 
+### 1.0
+
+* Limited app to only have 9999 links saved
+* Codes now expire after 20 minutes
+
 ### 0.3
 
-### 0.3.3
+#### 0.3.3
 
 * Added more information for NotFound component
 * Added focus property for pin input
 * Changed footer showLess prop behavior
 * Added link to /development in /howtouse
 
-### 0.3.2
+#### 0.3.2
 
 * Added :hover property for Header component
 * Footer component now shows less links in certain pages
@@ -19,7 +24,7 @@
 * Modified API url handling
 * Minor text corrections
 
-### 0.3.1
+#### 0.3.1
 
 * Added Google Analytics
 

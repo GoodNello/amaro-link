@@ -11,14 +11,13 @@ export default () => {
         <Header />
         <div className="boxed-view_box_list">
           <span>
-            <h3>0.3</h3>
+            <h3>1.0</h3>
             <ul>
-              <li>
-                New <Link to="/about-api">API support</Link> for GET and POST
-                requests
-              </li>
+              <li>Added limit for code creation</li>
+              <li>Limited app to only have 9999 links saved</li>
+              <li>Codes now expire after 20 minutes</li>
             </ul>
-            <p>Patch releases are not listed here.</p>
+            <p>Patch releases are listed on GitHub.</p>
             <p>
               <b>
                 <Link to="/development">Development and Known Issues</Link>

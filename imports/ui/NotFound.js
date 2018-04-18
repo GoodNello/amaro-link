@@ -23,7 +23,7 @@ export default props => {
         <p>We are unable to find that page.</p>
 
         {isNumber ? (
-          <ErrorDisplay error="No URL with that code has been found." />
+          <ErrorDisplay error="No URL with that code has been found. Maybe it has expired?" />
         ) : (
           undefined
         )}

@@ -12,23 +12,23 @@ export default () => {
         <div className="boxed-view_box_list">
           <span>
             <p>
-              Amaro Link is still under development and its database may be
-              resetted without notice.
+              Amaro Link is a project made by GoodNello. Its code is available
+              on GitHub.
             </p>
             <p>
-              Slowness and crashing may occur when using development releases.
+              Two new versions are under development on their respective
+              branches, feel free to contribute.
             </p>
           </span>
           <span>
             <h3>General</h3>
             <ul>
-              <li>Support for users is expected in the final release.</li>
               <li>
                 To avoid publishing the entire database to the client, the async
                 call to Links.find() in the UseCode page has been removed,
                 resulting in processing the inputted code only via server. This
-                will sure slow down the UX and will be fixed with the
-                introduction of user accounts.
+                will sure slow down the UX, but it's a drawback of not using
+                accounts.
               </li>
             </ul>
           </span>

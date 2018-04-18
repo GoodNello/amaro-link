@@ -1,5 +1,4 @@
 import { Meteor } from "meteor/meteor";
-import { Tracker } from "meteor/tracker";
 import React from "react";
 import { Link } from "react-router-dom";
 import PinInput from "react-pin-input";
